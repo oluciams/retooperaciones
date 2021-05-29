@@ -6,10 +6,25 @@ const not1 = d.getElementById("not1")
 const not2 = d.getElementById("not2")
 const regex= /^\d+$/
 
-function suma(n1,n2){ 
+function add(n1,n2){ 
     let resultado = (Number(n1)) + (Number(n2))
     total.textContent= resultado
 }
+
+function rest(n1,n2){ 
+    let resultado = (Number(n1)) - (Number(n2))
+    total.textContent= resultado
+}
+function multiply(n1,n2){ 
+    let resultado = (Number(n1)) * (Number(n2))
+    total.textContent= resultado
+}
+
+function divide(n1,n2){ 
+    let resultado = (Number(n1)) / (Number(n2))
+    total.textContent= resultado
+}
+
 
 const container=d.querySelector("#container")
 container.addEventListener("click", operacion)
@@ -18,12 +33,30 @@ function operacion(event){
     const n1regex= regex.test(num1.value)
     const n2regex= regex.test(num2.value)
 
-    if(event.target.matches(".add")){ 
-        console.log(n1regex)
-        console.log(n2regex)
-        
-        if(n1regex && n2regex){
-            suma(num1.value,num2.value)            
+    if(event.target.matches(".add")){        
+        if(n1regex && n2regex){            
+            add(num1.value,num2.value)            
+        }else {
+            notification(n1regex,n2regex)           
+        }
+    }  
+    if(event.target.matches(".rest")){        
+        if(n1regex && n2regex){            
+            rest(num1.value,num2.value)            
+        }else {
+            notification(n1regex,n2regex)           
+        }
+    }  
+    if(event.target.matches(".multiply")){        
+        if(n1regex && n2regex){            
+            multiply(num1.value,num2.value)            
+        }else {
+            notification(n1regex,n2regex)           
+        }
+    }  
+    if(event.target.matches(".divide")){        
+        if(n1regex && n2regex){            
+            divide(num1.value,num2.value)            
         }else {
             notification(n1regex,n2regex)           
         }
