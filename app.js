@@ -6,6 +6,9 @@ const not1 = d.getElementById("not1")
 const not2 = d.getElementById("not2")
 const regex= /^\d+$/
 
+num1.setAttribute("placeholder","Ingresa un numero")
+num2.setAttribute("placeholder","Ingresa un numero")
+
 function add(n1,n2){ 
     let resultado = (Number(n1)) + (Number(n2))
     total.textContent= resultado
@@ -98,47 +101,3 @@ function notification (number1,number2){
         not2.classList.add("hide")
     },2000)
 }
-
-
-// // button.addEventListener("click", function(){
-// const addTask = () => {    
-//     if(input.value){
-//         notification(true)
-//         const text = d.createElement("p")
-//         text.classList.add("task")
-//         text.textContent=input.value
-//         text.addEventListener("click", done)
-//         const li = d.createElement("li")
-//         li.classList.add("list")
-//         li.appendChild(text)
-//         list.appendChild(li)
-//         input.value=""
-//         const deleteButton = d.createElement("button")
-//         deleteButton.textContent= "delete"
-//         li.appendChild(deleteButton)
-    
-//         deleteButton.addEventListener("click", function(){
-//             if(confirm("Are you sure")){
-//                 this.parentElement.remove()
-//             }
-//         })
-//     } else {
-//         notification(false)
-//     }    
-// }
-
-// input.addEventListener("keydown", (e) => {
-//     if(e.key === "Enter"){
-//         addTask()
-//     }
-// })
-
-// button.addEventListener("click", addTask)
-
-// function done (){
-//     this.classList.toggle("done")
-// }
-
-
-
-
